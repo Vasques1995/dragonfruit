@@ -18,7 +18,7 @@ class _WorkInProgressWidgetState extends State<WorkInProgressWidget> {
       mainAxisSize: MainAxisSize.min,
       children: [
         Image.asset(
-          'gifs/beholder_gif.gif',
+          'assets/gifs/beholder_gif.gif',
           width: deviceSize.width / 2,
           fit: BoxFit.fitWidth,
         ),

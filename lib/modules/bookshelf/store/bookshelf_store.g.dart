@@ -25,6 +25,21 @@ mixin _$BookshelfStore on _BookshelfStoreBase, Store {
     });
   }
 
+  final _$sheetSizeAtom = Atom(name: '_BookshelfStoreBase.sheetSize');
+
+  @override
+  double get sheetSize {
+    _$sheetSizeAtom.reportRead();
+    return super.sheetSize;
+  }
+
+  @override
+  set sheetSize(double value) {
+    _$sheetSizeAtom.reportWrite(value, super.sheetSize, () {
+      super.sheetSize = value;
+    });
+  }
+
   final _$_BookshelfStoreBaseActionController =
       ActionController(name: '_BookshelfStoreBase');
 
@@ -40,9 +55,21 @@ mixin _$BookshelfStore on _BookshelfStoreBase, Store {
   }
 
   @override
+  dynamic setSheetSize(double newSheetSize) {
+    final _$actionInfo = _$_BookshelfStoreBaseActionController.startAction(
+        name: '_BookshelfStoreBase.setSheetSize');
+    try {
+      return super.setSheetSize(newSheetSize);
+    } finally {
+      _$_BookshelfStoreBaseActionController.endAction(_$actionInfo);
+    }
+  }
+
+  @override
   String toString() {
     return '''
-activePageIndex: ${activePageIndex}
+activePageIndex: ${activePageIndex},
+sheetSize: ${sheetSize}
     ''';
   }
 }
