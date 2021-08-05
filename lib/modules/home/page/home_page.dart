@@ -46,6 +46,7 @@ class _HomePageState extends ModularState<HomePage, HomeController> {
           Container(
             color: Colors.purple,
           ),
+          //TODO Make a better looking work in progress page
           Container(
             color: Colors.pink,
             child: Center(
