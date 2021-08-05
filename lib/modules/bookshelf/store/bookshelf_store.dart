@@ -8,8 +8,16 @@ abstract class _BookshelfStoreBase with Store {
   @observable
   int activePageIndex = 0;
 
+  @observable
+  double sheetSize = 0;
+
   @action
   setActivePage(int newValue) {
     this.activePageIndex = newValue;
+  }
+
+  @action
+  setSheetSize(double newSheetSize) {
+    this.sheetSize = newSheetSize;
   }
 }

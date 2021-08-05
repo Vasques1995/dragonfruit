@@ -7,4 +7,9 @@ class BookshelfController {
   inc() {
     bookshelfStore.setActivePage(bookshelfStore.activePageIndex + 1);
   }
+
+  adjustSheet(double newSheetSize){
+    bookshelfStore.setSheetSize(newSheetSize);
+  }
+
 }
