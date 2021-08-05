@@ -23,8 +23,11 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  flutter_modular: ^3.3.1 # Used for dependency injection, routing and project structure
+  #TODO Add linter
+  flutter_modular: ^3.4.0-dev.3 # Used for dependency injection, routing and project structure
   flutter_mobx: ^2.0.1 # Used for state management
+  json_serializable: ^4.1.3 #Used to generate JSON from data classes to facilitate and standardize queries
+
 
 
 
