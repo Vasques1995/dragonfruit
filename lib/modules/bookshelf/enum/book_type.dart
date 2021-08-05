@@ -1,0 +1,3 @@
+enum BookType{
+  ADVENTURE, SOURCEBOOK, EXTENDED
+}
