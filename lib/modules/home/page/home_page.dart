@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:dragonfruit/modules/home/controller/home_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
@@ -15,19 +17,38 @@ class _HomePageState extends ModularState<HomePage, HomeController> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      floatingActionButton: FloatingActionButton(
-        onPressed: controller.incrementCounter,
+      bottomNavigationBar: Observer(
+        name: 'BottomNavigationBarObserver',
+        builder: (BuildContext context) {
+          return BottomNavigationBar(
+            currentIndex: controller.homeStore.activePageIndex,
+            onTap: controller.goToPage,
+            type: BottomNavigationBarType.fixed,
+            showSelectedLabels: false,
+            showUnselectedLabels: false,
+            items: [
+              BottomNavigationBarItem(
+                  icon: Icon(Icons.menu_book_rounded), label: 'Livros'),
+              BottomNavigationBarItem(
+                  icon: Icon(Icons.person), label: 'Character'),
+              BottomNavigationBarItem(
+                  icon: Icon(Icons.search), label: 'Search'),
+            ],
+          );
+        },
       ),
       body: SafeArea(
-        child: Container(
-          color: Colors.purple,
-          child: Observer(
-            builder: (BuildContext context) {
-              return Text('Valor do counter: ${controller.homeStore.counter}');
-            },
-          ),
-        ),
-      ),
+          child: PageView(
+        controller: controller.pageController,
+        physics: NeverScrollableScrollPhysics(),
+        children: List.generate(
+            3,
+            (index) => Container(
+                  color: Colors
+                      .primaries[Random().nextInt(Colors.primaries.length)],
+                  child: Center(child: Text(index.toString())),
+                )),
+      )),
     );
   }
 }

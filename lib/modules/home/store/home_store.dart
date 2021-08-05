@@ -6,10 +6,10 @@ class HomeStore = _HomeStoreBase with _$HomeStore;
 
 abstract class _HomeStoreBase with Store {
   @observable
-  int counter = 0;
+  int activePageIndex = 0;
 
   @action
-  setCounter(int newValue) {
-    this.counter = newValue;
+  setActivePage(int newValue) {
+    this.activePageIndex = newValue;
   }
 }
