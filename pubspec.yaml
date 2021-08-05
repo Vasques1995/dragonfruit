@@ -23,15 +23,20 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  flutter_modular: ^3.3.1 # Used for dependency injection, routing and project structure
+  flutter_mobx: ^2.0.1 # Used for state management
+
 
 
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
-  cupertino_icons: ^1.0.2
+  cupertino_icons: ^1.0.3
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
+  mobx_codegen: ^2.0.2 # Used to generate the mobx files
+  build_runner: ^2.1.0 # Used to generate the mobx files
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
