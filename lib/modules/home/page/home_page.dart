@@ -1,6 +1,7 @@
 import 'dart:math';
 
 import 'package:dragonfruit/core/component/work_in_progress_widget.dart';
+import 'package:dragonfruit/modules/bookshelf/bookshelf_module.dart';
 import 'package:dragonfruit/modules/home/controller/home_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
@@ -43,9 +44,7 @@ class _HomePageState extends ModularState<HomePage, HomeController> {
         controller: controller.pageController,
         physics: NeverScrollableScrollPhysics(),
         children: [
-          Container(
-            color: Colors.purple,
-          ),
+          BookshelfModule(),
           //TODO Make a better looking work in progress page
           Container(
             color: Colors.pink,
