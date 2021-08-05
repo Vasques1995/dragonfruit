@@ -1,5 +1,6 @@
 import 'dart:math';
 
+import 'package:dragonfruit/core/component/work_in_progress_widget.dart';
 import 'package:dragonfruit/modules/home/controller/home_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
@@ -41,13 +42,25 @@ class _HomePageState extends ModularState<HomePage, HomeController> {
           child: PageView(
         controller: controller.pageController,
         physics: NeverScrollableScrollPhysics(),
-        children: List.generate(
-            3,
-            (index) => Container(
-                  color: Colors
-                      .primaries[Random().nextInt(Colors.primaries.length)],
-                  child: Center(child: Text(index.toString())),
-                )),
+        children: [
+          Container(
+            color: Colors.purple,
+          ),
+          Container(
+            color: Colors.pink,
+            child: Center(
+                child: WorkInProgressWidget(
+              message: 'Trabalho em progresso, talvez na próxima versão',
+            )),
+          ),
+          Container(
+            color: Colors.teal,
+            child: Center(
+                child: WorkInProgressWidget(
+              message: 'Trabalho em progresso, talvez na próxima versão',
+            )),
+          ),
+        ],
       )),
     );
   }
